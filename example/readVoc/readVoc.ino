@@ -28,7 +28,7 @@ void setup() {
   Serial.print("0x0");
   /*
     函数名称：readSensorVersion()
-    @brief 芯片的版本号.
+    @brief 读取芯片的版本号.
   */
   Serial.println(/*版本号=*/AGS01DB.readSensorVersion(), HEX);
 
