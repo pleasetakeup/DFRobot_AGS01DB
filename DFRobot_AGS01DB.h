@@ -1,11 +1,13 @@
 /*!
  * @file DFRobot_AGS01DB.h
- * @brief 定义DFRobot_AGS01DB 类的基础结构
- * @copyright	Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
+ * @brief 定义DFRobot_AGS01DB 类的基础结构，基础方法的实现
+ 
+ * @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @licence     The MIT License (MIT)
  * @author [fengli](1074485750@qq.com)
  * @version  V1.0
  * @date  2019-07-13
+ * @get from https://www.dfrobot.com
  * @https://github.com/DFRobot/DFRobot_AGS01DB
  */
 
@@ -60,7 +62,7 @@ public:
    * @brief 读取芯片的版本号.
    * @return 返回读取到的版本号，如0x0B.
    */
-    uint8_t readSensorVersion();
+    int readSensorVersion();
 
 private:
   /**
@@ -82,7 +84,7 @@ private:
    * @param size  指令数据的个数.
    * @return      返回0表示读取完成，返回其他值表示未能正确读取.
    */
-    uint8_t  readData(void *pBuf,size_t size);   //咨询彭雪
+    uint8_t  readData(void *pBuf,size_t size);   
     
     TwoWire *_pWire;
     
