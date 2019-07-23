@@ -57,23 +57,23 @@ int DFRobot_AGS01DB::readSensorVersion() {
   uint8_t readCMD[2];
   uint8_t data[2] = {0,0};
   int version;
-  bool readState = false;
+  int retries = 6;
   readCMD[0] = CMD_GET_VERSION_HIGH;
   readCMD[1] = CMD_GET_VERSION_LOW;
   
-  while (!readState) {
+  while (retries--) {
     writeCommand(readCMD, 2);
     delay(100);
     readData(data, 2);
     //从传感器读回的数据，经过校验函数校验得到的版本号是否正确。
     if (checkCRC8(data, 1) == 1) {
-      readState = true;
       version = data[0];
+      return version;
     } else {
       DBG("version's Crc8 incorrect");
     }
   }
-  return version;
+  
 }
 
 bool DFRobot_AGS01DB::checkCRC8(uint8_t *data, uint8_t Num) {
