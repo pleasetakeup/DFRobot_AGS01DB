@@ -1,7 +1,7 @@
 # DFRobot_AGS01DB
     AGS01DB 是一款含有已校准数字信号输出的MEMS VOC 气体传感器。它应用专用的数字模块采集技术和气体
-    感应传感技术，它的工作方式是IIC从机模式，我们可以使用IIC协议驱动此芯片，此款MEMS 气体传感器，
-    有低功耗高灵敏度、快速响应、高可靠性和稳定性、成本低、驱动电路简单等特点。
+感应传感技术，它的工作方式是IIC从机模式，我们可以使用IIC协议驱动此芯片，此款MEMS 气体传感器，
+有低功耗高灵敏度、快速响应、高可靠性和稳定性、成本低、驱动电路简单等特点。
  
 ![正反面svg效果图](https://github.com/ouki-wang/DFRobot_Sensor/raw/master/resources/images/SEN0245svg1.png)
 
