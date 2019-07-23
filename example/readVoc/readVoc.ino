@@ -2,7 +2,6 @@
    @file readVoc.ino
    @brief 读取空气中VOC的浓度和芯片的版本号，voc浓度的单位是PPM
    @n 实验现象：我们在开始前读取一次芯片的版本号，以便了解芯片，然后是每3秒读取一次voc浓度，并打印到串口
-   @n 用不同的浓度的测试气体，可以得到不同的采集结果
    @n 传感器的分辨率是0.1ppm，传感器的量程时0~100PPM 所以只能测量较窄的范围。
 
    @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
@@ -36,7 +35,7 @@ void setup() {
 }
 void loop() {
 
-  //每3秒读取一次voc值，不能更短，因为该芯片的采样周期 >=2s，小于两秒则会读到上一次采样的值.
+  //每3秒读取一次voc值，不能比两秒更短，因为该芯片的采样周期 >=2s，小于两秒则会读到上一次采样的值.
   //若间隔较长时间使用该模块，那么最好预热120s，才会读到较准确的值.
   float voc = AGS01DB.readVocPPM();
   if(voc >= 0){

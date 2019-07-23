@@ -14,7 +14,7 @@ DFRobot_AGS01DB	KEYWORD1
 
 begin	KEYWORD2
 readSensorVersion	KEYWORD2
-readVocConcentration	KEYWORD2
+readVocPPM	KEYWORD2
 
 
 

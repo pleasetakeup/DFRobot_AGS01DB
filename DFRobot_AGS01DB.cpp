@@ -32,12 +32,12 @@ float DFRobot_AGS01DB::readVocPPM() {
   //bool readState = false;
   readCMD[0] = CMD_DATA_COLLECTION_HIGH;
   readCMD[1] = CMD_DATA_COLLECTION_LOW;
-  int retries = 10;
+  int retries = 6;
   // 当返回数据有误时，会再请求一次数据，直到数据无误。
   while(retries--) {
     //delay(3000);
     writeCommand(readCMD, 2);
-    delay(100);
+    delay(10);
     readData(data, 3);
     //从传感器读回的数据，经过校验函数校验得到的voc是否正确。
     //校验为正确，则返回voc浓度
@@ -84,8 +84,10 @@ bool DFRobot_AGS01DB::checkCRC8(uint8_t *data, uint8_t Num) {
     crc ^= (data[byte]);
     for (bit = 8; bit > 0; --bit)
     {
-      if (crc & 0x80) crc = (crc << 1) ^ 0x31;
-      else crc = (crc << 1);
+      if (crc & 0x80) 
+          crc = (crc << 1) ^ 0x31;
+      else 
+          crc = (crc << 1);
     }
   }
   //让计算的到的crc与读到的crc作比较，来判断读到的数据是否正确
