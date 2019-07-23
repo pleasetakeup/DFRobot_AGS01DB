@@ -1,7 +1,6 @@
 /*!
  * @file DFRobot_AGS01DB.h
  * @brief 定义DFRobot_AGS01DB 类的基础结构，基础方法的实现
- 
  * @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @licence     The MIT License (MIT)
  * @author [fengli](1074485750@qq.com)
@@ -32,7 +31,7 @@ float DFRobot_AGS01DB::readVocPPM() {
   //bool readState = false;
   readCMD[0] = CMD_DATA_COLLECTION_HIGH;
   readCMD[1] = CMD_DATA_COLLECTION_LOW;
-  int retries = 6;
+  int retries = 10;
   // 当返回数据有误时，会再请求一次数据，直到数据无误。
   while(retries--) {
     //delay(3000);

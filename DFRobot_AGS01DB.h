@@ -1,7 +1,6 @@
 /*!
  * @file DFRobot_AGS01DB.h
  * @brief 定义DFRobot_AGS01DB 类的基础结构
- 
  * @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @licence     The MIT License (MIT)
  * @author [fengli](1074485750@qq.com)
