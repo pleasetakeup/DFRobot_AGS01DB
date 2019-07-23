@@ -24,6 +24,7 @@ void setup() {
     Serial.println("初始化芯片失败，请确认芯片连线是否正确");
     delay(1000);
   }
+  Serial.println("");
   Serial.print("the version of AGS01DB:");
   Serial.print("0x0");
   /*
@@ -31,7 +32,7 @@ void setup() {
     @brief 读取芯片的版本号.
   */
   Serial.println(/*版本号=*/AGS01DB.readSensorVersion(), HEX);
-
+  
 }
 void loop() {
 
