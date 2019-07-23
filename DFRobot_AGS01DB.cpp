@@ -28,12 +28,13 @@ int DFRobot_AGS01DB::begin() {
 float DFRobot_AGS01DB::readVocPPM() {
   uint8_t readCMD[2];
   uint8_t data[3] = {0};
-  uint16_t voc;
-  bool readState = false;
+  uint16_t voc=-10.0;
+  //bool readState = false;
   readCMD[0] = CMD_DATA_COLLECTION_HIGH;
   readCMD[1] = CMD_DATA_COLLECTION_LOW;
+  int retries = 10;
   // 当返回数据有误时，会再请求一次数据，直到数据无误。
-  while (!readState) {
+  while(retries--) {
     //delay(3000);
     writeCommand(readCMD, 2);
     delay(100);
@@ -44,7 +45,7 @@ float DFRobot_AGS01DB::readVocPPM() {
       voc = data[0];
       voc <<= 8;
       voc |= data[1];
-      readState = true;
+      break;
     } else {
       DBG("voc's Crc8 incorrect");
     }
@@ -100,8 +101,8 @@ void DFRobot_AGS01DB::writeCommand(const void *pBuf, size_t size) {
     DBG("pBuf ERROR!! : null pointer");
   }
   uint8_t * _pBuf = (uint8_t *)pBuf;
-  _pWire->begin();
-  delay(100);
+  //_pWire->begin();
+  //delay(100);
   _pWire->beginTransmission(AGS01DB_IIC_ADDR);
   // 将命令通过iic发给芯片
   for (uint16_t i = 0; i < size; i++) {
@@ -117,7 +118,7 @@ uint8_t DFRobot_AGS01DB::readData(void *pBuf, size_t size) {
   uint8_t * _pBuf = (uint8_t *)pBuf;
   //读取芯片返回的数据
   _pWire->requestFrom(AGS01DB_IIC_ADDR, size + 1);
-  delay(200);
+  delay(100);
   uint8_t i = 0;
 
   for (uint8_t i = 0 ; i < size + 1 ; i++) {

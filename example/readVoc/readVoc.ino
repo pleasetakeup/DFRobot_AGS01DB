@@ -38,14 +38,17 @@ void loop() {
 
   //每3秒读取一次voc值，不能更短，因为该芯片的采样周期 >=2s，小于两秒则会读到上一次采样的值.
   //若间隔较长时间使用该模块，那么最好预热120s，才会读到较准确的值.
+  float voc = AGS01DB.readVocPPM();
+  if(voc >= 0){
   Serial.print("the concentration of Voc:");
   /*
     函数名称： AGS01DB.readVocPPM()
     @brief 读取空气中有害气体的浓度.
     @return 返回读取到的VOC浓度值，单位是ppm.
   */
-  Serial.print(/*voc=*/AGS01DB.readVocPPM());
+  Serial.print(/*voc=*/voc);
   Serial.println(" PPM");
+  }
   delay(3000);
   
 }
