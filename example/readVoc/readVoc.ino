@@ -46,7 +46,6 @@ void loop() {
   */
   Serial.print(/*voc=*/AGS01DB.readVocPPM());
   Serial.println(" PPM");
-  Serial.println("");
   delay(2000);
   
 }
