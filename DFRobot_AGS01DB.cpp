@@ -31,7 +31,7 @@ float DFRobot_AGS01DB::readVocPPM() {
   //bool readState = false;
   readCMD[0] = CMD_DATA_COLLECTION_HIGH;
   readCMD[1] = CMD_DATA_COLLECTION_LOW;
-  int retries = 10;
+  int retries = 1;
   // 当返回数据有误时，会再请求一次数据，直到数据无误。
   while(retries--) {
     //delay(3000);
@@ -56,7 +56,7 @@ int DFRobot_AGS01DB::readSensorVersion() {
   uint8_t readCMD[2];
   uint8_t data[2] = {0,0};
   int version;
-  int retries = 6;
+  int retries = 10;
   readCMD[0] = CMD_GET_VERSION_HIGH;
   readCMD[1] = CMD_GET_VERSION_LOW;
   
@@ -72,7 +72,7 @@ int DFRobot_AGS01DB::readSensorVersion() {
       DBG("version's Crc8 incorrect");
     }
   }
-  
+ 
 }
 
 bool DFRobot_AGS01DB::checkCRC8(uint8_t *data, uint8_t Num) {
