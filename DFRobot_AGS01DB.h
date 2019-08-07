@@ -3,7 +3,7 @@
  * @brief 定义DFRobot_AGS01DB 类的基础结构
  * @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @licence     The MIT License (MIT)
- * @author [fengli](1074485750@qq.com)
+ * @author [fengli](li.feng@dfrobot.com)
  * @version  V1.0
  * @date  2019-07-13
  * @get from https://www.dfrobot.com
@@ -27,7 +27,7 @@
 #define DBG(...)
 #endif
 
-#define AGS01DB_IIC_ADDR  (0x22>>1)  /*传感器设备的地址*/
+#define AGS01DB_IIC_ADDR  (0x11)  /*传感器设备的地址*/
 
 //#define ERR_OK             0      //无错误
 //#define ERR_DATA_BUS      -1      //数据总线错误

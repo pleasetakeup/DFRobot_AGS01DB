@@ -1,7 +1,12 @@
 # DFRobot_AGS01DB
 AGS01DB 是一款含有已校准数字信号输出的MEMS VOC 气体传感器。它应用专用的数字模块采集技术和气体
-感应传感技术，它的工作方式是IIC从机模式，我们可以使用IIC协议驱动此芯片，此款MEMS 气体传感器有
-低功耗高灵敏度、快速响应、高可靠性和稳定性、成本低、驱动电路简单等特点。
+感应传感技术，它的工作方式是IIC从机模式,此款MEMS气体传感器有低功耗高灵敏度、快速响应、高可靠性
+和稳定性、成本低、驱动电路简单等特点.该芯片可以检测到乙醇、氨气、硫化物、苯系蒸汽、烟雾和其它有
+害气体，单位是PPM(表示一百万份单位质量的溶液中所含溶质的质量).
+不同的VOC气体的安全值不一样，但大都小于100PPM,有的甚至小于10PPM，如苯
+安全量：小于1.5 PPM
+低报警量：1.5-3 PPM
+高报警量：3-8 PPM
  
 ![正反面svg效果图](https://github.com/ouki-wang/DFRobot_Sensor/raw/master/resources/images/SEN0245svg1.png)
 
@@ -20,8 +25,7 @@ AGS01DB 是一款含有已校准数字信号输出的MEMS VOC 气体传感器。
 
 ## Summary
 
-  使用此库可以驱动AGS01DB芯片读取空气中有害气体的浓度，如乙醇、氨气、硫化物、苯系蒸汽、烟雾和其它有害气体
-,如果模块隔较长一段时间没有使用，则需要预热一段时间，最好是两分钟，读出的数据才会比较准确。
+  使用此库可以驱动AGS01DB芯片读取空气中有害气体的浓度。
 
 ## Installation
 
@@ -54,7 +58,7 @@ uint8_t readSensorVersion();
 
 MCU                | Work Well    | Work Wrong   | Untested    | Remarks
 ------------------ | :----------: | :----------: | :---------: | -----
-Arduino uno        |      √       |              |             | 
+Arduino Uno        |      √       |              |             | 
 Mega2560        |      √       |              |             | 
 Leonardo        |      √       |              |             | 
 ESP32        |      √       |              |             | 
@@ -69,7 +73,7 @@ micro:bit        |      √       |              |             |
 
 ## Credits
 
-Written by fengli(1074485750@qq.com), 2019.7.22 (Welcome to our [website](https://www.dfrobot.com/))
+Written by fengli(li.feng@dfrobot.com), 2019.7.22 (Welcome to our [website](https://www.dfrobot.com/))
 
 
 
