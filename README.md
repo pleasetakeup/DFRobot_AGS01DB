@@ -8,6 +8,7 @@ AGS01DB 是一款含有已校准数字信号输出的MEMS VOC 气体传感器。
 低报警量：1.5-3 PPM
 高报警量：3-8 PPM
 人生的愿望大都如此
+幸福的来源是承认当下的自己
 ![正反面svg效果图](https://github.com/ouki-wang/DFRobot_Sensor/raw/master/resources/images/SEN0245svg1.png)
 
 ## 产品链接（链接到英文商城）
