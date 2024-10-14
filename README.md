@@ -13,7 +13,7 @@ AGS01DB 是一款含有已校准数字信号输出的MEMS VOC 气体传感器。
 
 ## 产品链接（链接到英文商城）
     SKU：AGS01DB voc气体传感器
-   
+    SKU：AGS01DB voc气体传感器
 ## Table of Contents
 
 * [Summary](#summary)
